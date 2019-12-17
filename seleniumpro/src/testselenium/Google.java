@@ -1,4 +1,4 @@
-package testselenium;
+ package testselenium;
 
 import java.util.concurrent.TimeUnit;
 
@@ -10,7 +10,7 @@ public class Google
 	 public static void main(String[] args) throws InterruptedException 
 	 {			
 		  // open browser
-				WebDriver driver = DriverFactory.getDriverFor("chrome");
+				WebDriver driver = DriverFactory.getDriverFor("firefox");
 
 				// wait for page load
 				driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
@@ -23,7 +23,7 @@ public class Google
 				
 				driver.findElement(By.xpath("//label[text()='Onward Date']")).click();
 				
-
+			
 				boolean monthFound = false;
 				while (!monthFound) {
 					String mTitle = driver.findElement

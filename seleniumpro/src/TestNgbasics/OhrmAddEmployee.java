@@ -34,8 +34,8 @@ public class OhrmAddEmployee {
 		welcomePage.clickOnAddEmployeeLink();
 
 		AddEmployeePage addEmployeePage = new AddEmployeePage();
-		addEmployeePage.enterFirstName("sai");
-		addEmployeePage.enterLastName("krishna");
+		addEmployeePage.enterFirstName("Alex");
+		addEmployeePage.enterLastName("john");
 		addEmployeePage.clickOnSaveButton();
 
 	}

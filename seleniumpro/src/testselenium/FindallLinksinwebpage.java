@@ -16,12 +16,14 @@ public class FindallLinksinwebpage {
 		driver.get("https://www.amazon.in/");
 		String data=driver.getTitle();
 		System.out.println(data);
+		
+		
 		List<WebElement> links=driver.findElements(By.tagName("img"));
 	    for(int i=0;i<links.size()-1;i++)
 	    {
 	    	WebDriverWait wait= new WebDriverWait(driver,10);
 	        wait.until(ExpectedConditions.titleContains(data));
-	        System.out.println(links.get(i).getAttribute("alt"));
+	        System.out.println(i+"--"+links.get(i).getAttribute("alt"));
 	    }
 	}
 

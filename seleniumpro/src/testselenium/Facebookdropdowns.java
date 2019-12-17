@@ -1,5 +1,7 @@
 package testselenium;
 
+import static org.junit.Assert.assertTrue;
+
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -13,23 +15,15 @@ public class Facebookdropdowns
 	 static WebDriver driver=null;
   public static void main(String[] args) throws Exception
   {
-			    WebDriver driver = DriverFactory.getDriverFor("chrome");
-				driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
-				// goto the  facebook site 
+			    WebDriver driver = DriverFactory.getDriverFor("firefox");
+				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 				driver.get("https://www.facebook.com/");
-				
 				String a=driver.getTitle();
 				System.out.println(a);
-				//Thread.sleep(1000); 
-				//find the elements of day,month,year 
-				
 		        WebElement DaydropdownElement= driver.findElement(By.id("day"));
 		        WebElement monthdropdownElement= driver.findElement(By.id("month"));
 		        WebElement yeardropdownElement= driver.findElement(By.id("year"));
 		        driver.manage().window().maximize();
-		        
-		        // create the select class object
-		        
 		        Select day=new Select(DaydropdownElement);
 		        Select month=new Select(monthdropdownElement);
 		        Select year=new Select(yeardropdownElement);
@@ -39,11 +33,12 @@ public class Facebookdropdowns
 		        year.selectByValue("2000");
 		        
 		        List<WebElement> elementsCount = day.getOptions();
-		    
-		        for(int i =0; i<=elementsCount.size()-1; i++)
+			    
+		        for(int i =0; i<=elementsCount.size(); i++)
 		        {
 		        String options = elementsCount.get(i).getText();
 		        System.out.println(options);
 		        }
+		        assertTrue(" the title is incorrect",driver.getTitle().equals("Facebook - log i sign up"));
 	  }
 }

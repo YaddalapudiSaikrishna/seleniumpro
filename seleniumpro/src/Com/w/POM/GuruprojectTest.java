@@ -45,7 +45,7 @@ public class GuruprojectTest
   		 al.accept();
       }   
 
-	 public void Expectedresult()         // verification 
+	 public void Expectedresult()        // verification 
 	   {
             String str=driver.getTitle();
             if(str.equalsIgnoreCase("Guru99 Bank Manager homePage"))

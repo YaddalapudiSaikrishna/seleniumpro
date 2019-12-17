@@ -20,6 +20,7 @@ public static void main(String[] args) throws InterruptedException
 		WebDriver driver=DriverFactory.getDriverFor("chrome");
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 		driver.get("https://www.tsrtconline.in/oprs-web/");
+		driver.manage().window().maximize();
 	    driver.findElement(By.id("searchBtn")).click();
 	    
 	    Alert a1=driver.switchTo().alert();
@@ -33,7 +34,7 @@ public static void main(String[] args) throws InterruptedException
 	    String tplace="TIRUPATHI";
 	    
 	    WebDriverWait wait=new WebDriverWait(driver, 20);
-	    wait.until(ExpectedConditions.presenceOfElementLocated(By.className("srvceNO")));
+	    wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class='srvceNO']")));
 	    
 	    driver.findElement(By.xpath("//*[@name='fromPlaceName']")).sendKeys(splace);
 	    driver.findElement(By.linkText(splace)).click();
@@ -44,7 +45,7 @@ public static void main(String[] args) throws InterruptedException
 	    Thread.sleep(1000);
 	    driver.findElement(By.id("searchBtn")).click();
 	    
-	    List<WebElement> lstserv =driver.findElements(By.className("srvceNO"));
+	    List<WebElement> lstserv =driver.findElements(By.xpath("//div[@class='srvceNO']"));
 	    for(int i=0;i<lstserv.size();i++)
 	     {
 	     	System.out.println(lstserv.get(i).getText());;

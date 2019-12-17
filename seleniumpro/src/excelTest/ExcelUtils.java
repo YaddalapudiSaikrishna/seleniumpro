@@ -1,11 +1,7 @@
 package excelTest;
 
-import java.io.File;
-import org.apache.commons.io.FileUtils;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 public class ExcelUtils 
@@ -13,7 +9,7 @@ public class ExcelUtils
 	static String projectpath;
 	static XSSFWorkbook workbook;
 	static XSSFSheet sheet;
-	static  WebDriver driver=null;
+
 	public  ExcelUtils(String excelpath,String sheetname)
 	{   try
 	{
@@ -28,15 +24,17 @@ public class ExcelUtils
 	}
 	}
 	public static void main(String[] args) throws Exception 
-	{   getrowcount();
-	getstringdata(1,1);
-	getnumberdata(1,0);
+	{   
+	getrowcount();
+	getstringdata(0,0);
+	getnumberdata(2,1);
 	getcoloumcount();
 	}
 	public static int getrowcount()
 	{  int rowcount=0;
 	try
 	{
+	
 		rowcount=sheet.getPhysicalNumberOfRows();
 		//System.out.println("cell row count is :"+rowcount);
 	}
@@ -54,6 +52,7 @@ public class ExcelUtils
 	{
 		coloumcount=sheet.getRow(1).getPhysicalNumberOfCells();
 		//System.out.println("cell coloum count is :"+coloumcount);
+		
 	}
 	catch(Exception e)
 	{
@@ -68,7 +67,6 @@ public class ExcelUtils
 		try
 		{
 			double numdata=sheet.getRow(rowNum).getCell(cellNum).getNumericCellValue();
-			// System.out.println(numdata);
 		}
 		catch(Exception e)
 		{
@@ -78,18 +76,19 @@ public class ExcelUtils
 		}
 	}
 	public static String getstringdata(int rowNum,int cellNum)
-	{   String Stringdata="null";
+	{   
+		String Stringdata="null";
 	try 
 	{
 		Stringdata=sheet.getRow(rowNum).getCell(cellNum).getStringCellValue();
-		// System.out.println(Stringdata);
 	}
 	catch(Exception e)
 	{
 		System.out.println(e.getMessage());
 		System.out.println(e.getCause());
 		e.printStackTrace();
-	}return Stringdata;
+	}
+	return Stringdata;
 
 	}
 }

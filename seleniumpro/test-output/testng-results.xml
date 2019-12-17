@@ -1,29 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+<testng-results ignored="2" total="4" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2019-09-27T10:33:43Z" name="Default suite" finished-at="2019-09-27T10:33:43Z" duration-ms="117">
+  <suite started-at="2019-11-25T08:59:22Z" name="GroupsINTestNG" finished-at="2019-11-25T08:59:22Z" duration-ms="159">
     <groups>
+      <group name="smoke">
+        <method signature="GroupsINTestNG.test2()[pri:0, instance:TestNgbasics.GroupsINTestNG@21507a04]" name="test2" class="TestNgbasics.GroupsINTestNG"/>
+        <method signature="GroupsINTestNG.test3()[pri:0, instance:TestNgbasics.GroupsINTestNG@21507a04]" name="test3" class="TestNgbasics.GroupsINTestNG"/>
+      </group> <!-- smoke -->
+      <group name="integrationtesting">
+        <method signature="GroupsINTestNG.test2()[pri:0, instance:TestNgbasics.GroupsINTestNG@21507a04]" name="test2" class="TestNgbasics.GroupsINTestNG"/>
+      </group> <!-- integrationtesting -->
     </groups>
-    <test started-at="2019-09-27T10:33:43Z" name="Default test" finished-at="2019-09-27T10:33:43Z" duration-ms="117">
-      <class name="listeners.dependsON">
-        <test-method signature="test2()[pri:0, instance:listeners.dependsON@6b419da]" started-at="2019-09-27T10:33:43Z" name="test2" finished-at="2019-09-27T10:33:43Z" duration-ms="31" status="PASS">
+    <test started-at="2019-11-25T08:59:22Z" name="test1" finished-at="2019-11-25T08:59:22Z" duration-ms="159">
+      <class name="TestNgbasics.GroupsINTestNG">
+        <test-method signature="test2()[pri:0, instance:TestNgbasics.GroupsINTestNG@21507a04]" started-at="2019-11-25T08:59:22Z" name="test2" finished-at="2019-11-25T08:59:22Z" duration-ms="30" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test2 -->
-        <test-method signature="test3()[pri:3, instance:listeners.dependsON@6b419da]" started-at="2019-09-27T10:33:43Z" name="test3" finished-at="2019-09-27T10:33:43Z" duration-ms="16" status="PASS">
+        <test-method signature="test3()[pri:0, instance:TestNgbasics.GroupsINTestNG@21507a04]" started-at="2019-11-25T08:59:22Z" name="test3" finished-at="2019-11-25T08:59:22Z" duration-ms="6" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test3 -->
-        <test-method signature="test1()[pri:0, instance:listeners.dependsON@6b419da]" started-at="2019-09-27T10:33:43Z" name="test1" finished-at="2019-09-27T10:33:43Z" depends-on-methods="listeners.dependsON.test2" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test1 -->
-        <test-method signature="test4()[pri:0, instance:listeners.dependsON@6b419da]" started-at="2019-09-27T10:33:43Z" name="test4" finished-at="2019-09-27T10:33:43Z" depends-on-methods="listeners.dependsON.test3" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test4 -->
-      </class> <!-- listeners.dependsON -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- TestNgbasics.GroupsINTestNG -->
+    </test> <!-- test1 -->
+  </suite> <!-- GroupsINTestNG -->
 </testng-results>

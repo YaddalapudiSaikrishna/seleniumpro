@@ -2,6 +2,8 @@
 package listeners;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+import org.testng.SkipException;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -10,19 +12,20 @@ public class TestNGlistenersdemo2
 {   
 	static WebDriver driver=null;
 
-	@Test(priority = 1)
+	@Test
 	public void test1()
 	{
 
 		System.out.println("i am inside test 1 ");
+		Assert.assertTrue(false);
 	}
-	@Test(priority = 2)
+	@Test
 	public void test2()
 	{   
-
 		System.out.println("i am inside test 2");
+		throw new SkipException(" skiped the test");
 	}
-	@Test(priority = 3)
+	@Test
 	public void test3()
 	{   
 				System.out.println("i am inside test 3");

@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="excelTest.Exceldataprovider">
+      <class name="TestNgbasics.paralleltestsinmultiplebrowsers">
         <methods>
-          <include name="testcase1"/>
-          <include name="entrydata"/>
+          <include name="test"/>
+          <include name="closebrowser"/>
+          <include name="setup"/>
         </methods>
-      </class> <!-- excelTest.Exceldataprovider -->
+      </class> <!-- TestNgbasics.paralleltestsinmultiplebrowsers -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

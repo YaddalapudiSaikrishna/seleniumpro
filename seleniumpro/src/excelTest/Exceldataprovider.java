@@ -14,14 +14,14 @@ import testselenium.DriverFactory;
 
 public class Exceldataprovider 
 { 
-  static WebDriver driver=null;
+	static WebDriver driver=null;
 	@BeforeTest
 	public void entrydata()
 	{
-			driver=DriverFactory.getDriverFor("chrome");
-			driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-			driver.get("http://www.demo.guru99.com/v4/");
-			driver.manage().window().maximize();
+		driver=DriverFactory.getDriverFor("firefox");
+		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		driver.get("http://www.demo.guru99.com/v4/");
+		driver.manage().window().maximize();
 
 	}
 	@Test(dataProvider = "testcase1")
@@ -29,22 +29,19 @@ public class Exceldataprovider
 	{
 		System.out.println(username+" "+password);
 		driver.findElement(By.name("uid")).sendKeys(username);
-        driver.findElement(By.name("password")).sendKeys(password);
-        driver.findElement(By.name("btnLogin")).click();
+		driver.findElement(By.name("password")).sendKeys(password);
+		driver.findElement(By.name("btnLogin")).click();
 		Thread.sleep(1000);	
+
+		Alert al = driver.switchTo().alert();
+
+		if(al.getText().equalsIgnoreCase("Guru99 Bank Manager homePage")) 
+		{  System.out.println("guru page is successfully login");	}
 		
-     Alert al = driver.switchTo().alert();
-         
-     if(al.getText().equalsIgnoreCase("Guru99 Bank Manager homePage")) 
-		 { 
-			System.out.println("guru page is successfully login");
-		 }
-     if(al.getText().equalsIgnoreCase("User or Password is not valid")) 
-	  {
-		System.out.println("enter valid userid / enter valid password");
-	  }
-     else 
-  		 al.accept();  
+		if(al.getText().equalsIgnoreCase("User or Password is not valid")) 
+		{  System.out.println("enter valid userid / enter valid password");	}
+		else 
+		{ al.accept(); }  
 	}
 	@DataProvider(name="testcase1")
 	public Object[][] Getdata()
@@ -66,10 +63,8 @@ public class Exceldataprovider
 			for(int j=0;j<coloumcount;j++)
 			{
 				String cellData=excel.getstringdata(i,j);
-				//	System.out.println(cellData);
-
 				data[i-1][j]=cellData;
-			}//System.out.println("");
+			}
 		} return data;
 
 	}

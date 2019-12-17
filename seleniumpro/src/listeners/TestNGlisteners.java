@@ -9,8 +9,8 @@ public class TestNGlisteners implements ITestListener
 {
 	@Override
 	public void onTestStart(ITestResult result) {
-System.out.println("test is started "+result.getName());
-		
+		System.out.println("test is started "+result.getName());
+
 	}
 
 	@Override
@@ -43,7 +43,9 @@ System.out.println("test is started "+result.getName());
 
 	@Override
 	public void onFinish(ITestContext context) {
-		System.out.println("test is started "+context.getName());		
+		// TODO Auto-generated method stub
+		
 	}
 
+	
 }
