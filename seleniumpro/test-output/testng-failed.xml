@@ -1,26 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Test(failed)">
-    <parameter name="name" value="clone"/>
-    <parameter name="myname" value="Github"/>
+<suite thread-count="2" parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="2" parallel="tests" name="FirefoxTest(failed)">
+    <parameter name="BrowserName" value="firefox"/>
     <classes>
-      <class name="TestNgbasics.TESTNGParametersSAMPLE">
+      <class name="TestNgbasics.tng_parallelTesting_02">
         <methods>
           <include name="test1"/>
         </methods>
-      </class> <!-- TestNgbasics.TESTNGParametersSAMPLE -->
+      </class> <!-- TestNgbasics.tng_parallelTesting_02 -->
     </classes>
-  </test> <!-- Test(failed) -->
-  <test thread-count="5" name="test1(failed)">
-    <parameter name="sub2" value="cucumber"/>
-    <parameter name="sub1" value="selenium"/>
-    <classes>
-      <class name="TestNgbasics.TESTNGParametersSAMPLE">
-        <methods>
-          <include name="test"/>
-        </methods>
-      </class> <!-- TestNgbasics.TESTNGParametersSAMPLE -->
-    </classes>
-  </test> <!-- test1(failed) -->
+  </test> <!-- FirefoxTest(failed) -->
 </suite> <!-- Failed suite [Suite] -->

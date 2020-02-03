@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite0]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test0(failed)">
+    <classes>
+      <class name="TestNgbasics.TsrtcTestNG">
+        <methods>
+          <include name="openbrowser"/>
+          <include name="setupBrowser"/>
+          <include name="getallservices"/>
+        </methods>
+      </class> <!-- TestNgbasics.TsrtcTestNG -->
+    </classes>
+  </test> <!-- Test0(failed) -->
+</suite> <!-- Failed suite [Suite0] -->

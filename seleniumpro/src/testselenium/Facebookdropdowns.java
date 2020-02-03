@@ -24,6 +24,7 @@ public class Facebookdropdowns
 		        WebElement monthdropdownElement= driver.findElement(By.id("month"));
 		        WebElement yeardropdownElement= driver.findElement(By.id("year"));
 		        driver.manage().window().maximize();
+		        
 		        Select day=new Select(DaydropdownElement);
 		        Select month=new Select(monthdropdownElement);
 		        Select year=new Select(yeardropdownElement);
@@ -32,8 +33,7 @@ public class Facebookdropdowns
 		        month.selectByVisibleText("Aug");
 		        year.selectByValue("2000");
 		        
-		        List<WebElement> elementsCount = day.getOptions();
-			    
+		        List<WebElement> elementsCount = day.getOptions();	    
 		        for(int i =0; i<=elementsCount.size(); i++)
 		        {
 		        String options = elementsCount.get(i).getText();

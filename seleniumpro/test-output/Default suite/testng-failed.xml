@@ -3,13 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestNgbasics.paralleltestsinmultiplebrowsers">
+      <class name="TestNgbasics.DependencyalwaysRUNmethod">
         <methods>
-          <include name="test"/>
-          <include name="closebrowser"/>
-          <include name="setup"/>
+          <include name="loginpage"/>
         </methods>
-      </class> <!-- TestNgbasics.paralleltestsinmultiplebrowsers -->
+      </class> <!-- TestNgbasics.DependencyalwaysRUNmethod -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
